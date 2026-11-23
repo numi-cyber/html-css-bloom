@@ -1,0 +1,59 @@
+/* ===== עיצוב המיוחד לדף אודות בלבד ===== */
+
+/* תמונה עגולה לצד טקסט - פריסת פלקס */
+.about {
+  display: flex;
+  gap: 3%;
+  align-items: center;
+}
+
+.about img {
+  width: 40%;
+  border-radius: 50%;
+  box-shadow: var(--shadow);
+}
+
+.about article {
+  width: 57%;
+}
+
+/* טבלת שעות פתיחה - טבלא מעוצבת (ולא פריסה!) */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+/* בוחר את תאי הכותרת של הטבלה */
+th,
+/* וגם את התאים הרגילים */
+td {
+  padding: 8px;
+  border-bottom: 1px solid var(--pink-light);
+  text-align: right;
+}
+
+/* סלקטור מתקדם: בוחר את התאים בשורות האי-זוגיות (1, 3, 5...) */
+tr:nth-child(odd) td {
+  background: var(--cream);
+}
+
+/* מפת גוגל */
+iframe {
+  width: 100%;
+  height: 30vh;
+  min-height: 200px;
+  border: 0;
+  border-radius: var(--radius);
+}
+
+/* רספונסיביות של דף אודות */
+@media (max-width: 800px) {
+  .about {
+    flex-direction: column;
+  }
+
+  .about img,
+  .about article {
+    width: 70%;
+  }
+}

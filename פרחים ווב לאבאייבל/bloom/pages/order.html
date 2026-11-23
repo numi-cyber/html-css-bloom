@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>הזמנה | Bloom חנות פרחים</title>
+  <link rel="icon" href="../favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&family=Secular+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/order.css">
+</head>
+<body>
+  <div class="page">
+    <header>
+      <a href="../index.html"><img src="../assets/images/logo.png" alt="לוגו Bloom"><span>Bloom</span></a>
+      <p>פרחים שמדברים בשבילך</p>
+    </header>
+    <div class="middle">
+      <aside>
+        <nav>
+          <ul>
+            <li><a href="../index.html">דף הבית</a></li>
+            <li><a href="bouquets.html">זרי פרחים</a></li>
+            <li><a href="plants.html">עציצים</a></li>
+            <li><a href="order.html">הזמנה</a></li>
+            <li><a href="about.html">אודות</a></li>
+          </ul>
+        </nav>
+      </aside>
+      <main>
+        <h1>טופס הזמנה</h1>
+        <form action="thanks.html" method="get">
+          <fieldset>
+            <legend>פרטים אישיים</legend>
+            <label for="name">שם מלא:</label>
+            <input type="text" id="name" name="name" placeholder="ישראל ישראלי" required minlength="2">
+            <label for="email">אימייל:</label>
+            <input type="email" id="email" name="email" placeholder="name@mail.com" required>
+            <label for="phone">טלפון:</label>
+            <input type="tel" id="phone" name="phone" placeholder="0501234567" pattern="0[0-9]{8,9}" required>
+          </fieldset>
+          <fieldset>
+            <legend>פרטי ההזמנה</legend>
+            <label for="product">מוצר:</label>
+            <select id="product" name="product" required>
+              <option value="">-- בחרו --</option>
+              <optgroup label="זרים"><option>זר אדמוניות</option><option>זר רומנטי</option><option>זר שדה</option><option>זר כלה</option></optgroup>
+              <optgroup label="עציצים"><option>מונסטרה</option><option>פוטוס</option><option>מונסטרה גדולה</option><option>פיקוס</option></optgroup>
+              
+            </select>
+            <label for="qty">כמות:</label>
+            <input type="number" id="qty" name="qty" min="1" max="10" value="1" required>
+            <label for="date">תאריך משלוח:</label>
+            <input type="date" id="date" name="date" min="2026-01-01" required>
+            <!-- בחירת צבע הסרט: רדיו-תגיות + תצוגה מקדימה בעזרת :checked -->
+            <p class="q">צבע סרט העטיפה:</p>
+            <div class="ribbon">
+  <input type="radio" id="c-pink" name="color" value="#e86a92" checked>
+  <label for="c-pink">ורוד</label>
+  <input type="radio" id="c-red" name="color" value="#c0453f">
+  <label for="c-red">אדום</label>
+  <input type="radio" id="c-lilac" name="color" value="#8d7bb0">
+  <label for="c-lilac">סגול</label>
+  <input type="radio" id="c-cream" name="color" value="#e8d5a8">
+  <label for="c-cream">קרם</label>
+  <input type="radio" id="c-green" name="color" value="#3f6b4f">
+  <label for="c-green">ירוק</label>
+  <p class="preview">הסרט שבחרת: <b class="chip"></b><span class="cname"></span></p>
+            </div>
+
+            <p class="q">גודל הזר:</p>
+            <div class="sizes">
+  <input type="radio" id="s-small" name="size" value="small">
+  <label for="s-small">Small</label>
+  <input type="radio" id="s-medium" name="size" value="medium" checked>
+  <label for="s-medium">Medium</label>
+  <input type="radio" id="s-large" name="size" value="large">
+  <label for="s-large">Large</label>
+            </div>
+
+            <div class="row">
+              <input type="radio" id="del" name="ship" value="delivery" checked><label for="del">משלוח</label>
+              <input type="radio" id="pick" name="ship" value="pickup"><label for="pick">איסוף עצמי</label>
+            </div>
+            <div class="row">
+              <input type="checkbox" id="card" name="card"><label for="card">להוסיף כרטיס ברכה</label>
+            </div>
+            <label for="note">הקדשה:</label>
+            <textarea id="note" name="note" rows="3" maxlength="200"></textarea>
+            <p class="q">התשלום מתבצע טלפונית</p>
+          </fieldset>
+          <div class="buttons">
+            <input type="submit" value="שליחת הזמנה">
+            <input type="reset" value="איפוס">
+          </div>
+        </form>
+      </main>
+    </div>
+    <footer>
+      <p>&copy; 2026 Bloom - כל הזכויות שמורות</p>
+      <p><a href="about.html">אודות</a> | <a href="mailto:info@bloom.co.il">info@bloom.co.il</a> | <a href="tel:+97231234567">03-1234567</a></p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+/* ===== עיצוב המיוחד לדף סיום הפעולה בלבד ===== */
+
+.done {
+  text-align: center;
+  padding: 5% 0;
+}
+
+.done span {
+  display: inline-block;
+  font-size: 4em;
+  animation: pop 1s ease-out;
+}
+
+.done p:first-of-type {
+  font-size: 1.2em;
+  margin-bottom: 3%;
+}
+
+/* אנימציית הופעה */
+@keyframes pop {
+  0% { transform: scale(0); }
+  70% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+/* רספונסיביות של דף הסיום */
+@media (max-width: 800px) {
+  .done span {
+    font-size: 3em;
+  }
+}

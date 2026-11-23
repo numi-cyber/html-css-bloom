@@ -1,0 +1,19 @@
+/* ===== עיצוב המיוחד לדף העציצים בלבד ===== */
+/* כרטיסי המוצרים עצמם מעוצבים ב-style.css, כי הם זהים גם בדף הזרים */
+
+.intro {
+  color: #666;
+  margin-bottom: 2%;
+  font-size: 1.1em;
+}
+
+/* רספונסיביות של דף העציצים */
+@media (max-width: 800px) {
+  .products article {
+    flex-basis: 100%;
+  }
+
+  .intro {
+    font-size: 1em;
+  }
+}

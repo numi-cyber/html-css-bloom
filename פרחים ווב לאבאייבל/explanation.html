@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl"><head><meta charset="UTF-8"><title>הסבר פרויקט Bloom</title>
+<style>body{font-family:Arial;max-width:800px;margin:30px auto;line-height:1.7}h1,h2{color:#3f6b4f}code{background:#eee;padding:0 4px}</style></head>
+<body>
+<h1>הסבר לפרויקט HTML+CSS - אתר Bloom</h1>
+
+<h2>1. פריסת האתר באמצעות פלקס</h2>
+<ul>
+<li><code>.page</code> - <code>display:flex; flex-direction:column</code> - מסדר את header, האזור האמצעי ו-footer אחד מתחת לשני. <code>min-height:100vh</code> דואג שה-footer תמיד בתחתית.</li>
+<li><code>.middle</code> - <code>display:flex; flex-direction:row; gap; flex:1</code> - מציב את התפריט (aside/nav) בצד ואת main לידו. במסכים קטנים (media query) הופך ל-<code>column</code>.</li>
+<li><code>header</code> - <code>display:flex; justify-content:space-between; align-items:center</code> - לוגו מצד אחד וסלוגן מהצד השני.</li>
+<li><code>aside ul</code> - <code>flex-direction:column</code> (ובמובייל <code>row</code> + <code>flex-wrap:wrap</code>).</li>
+<li><code>.products</code> - <code>flex-wrap:wrap; flex:1 1 250px</code> - כרטיסי מוצרים שעוברים שורה אוטומטית.</li>
+<li><code>footer</code>, טופס ההזמנה, דף אודות - גם הם בנויים בפלקס.</li>
+</ul>
+<p>תכונות פלקס שבשימוש: display:flex, flex-direction, justify-content, align-items, flex-wrap, gap, flex.</p>
+
+<h2>2. נושאים חדשים שנלמדו (למידה עצמית)</h2>
+<ol>
+<li><b>מפת תמונה (map, area)</b> - בדף הבית: לחיצה על צד ימין/שמאל של התמונה מובילה לדף זרים או עציצים.</li>
+<li><b>משתני CSS (:root, var())</b> - בקובץ style.css הוגדרו צבעים, רדיוס וצל פעם אחת, ובשימוש בכל האתר כדי לשמור על עיצוב אחיד.</li>
+<li><b>פריסת גריד (grid)</b> - בדף הבית, שלושת ריבועי היתרונות מסודרים ב-<code>grid-template-columns:repeat(3,1fr)</code>.</li>
+<li><b>קישורים מיוחדים</b> - mailto ו-tel ב-footer, וקישור download לקטלוג ה-PDF בדף הבית.</li>
+<li><b>עיצוב מתקדם</b> - object-fit, filter, transform, linear-gradient, border-radius, box-shadow בכרטיסי המוצרים ובכותרת.</li>
+</ol>
+
+<h2>3. קבצי העיצוב (CSS)</h2>
+<ul>
+<li><b>css/style.css</b> - העיצוב המשותף לכל דפי האתר: מבנה הפלקס של הדף, ה-header, תפריט ה-aside, ה-main, כרטיסי המוצרים, הכפתורים, ה-footer, האנימציות ומשתני ה-CSS.</li>
+<li>עיצוב ששייך לדף אחד בלבד נכתב בקובץ נפרד לכל דף, וכל דף מקשר לשני הקבצים (המשותף + שלו):
+<ul>
+<li><code>css/home.css</code> - דף הבית: תמונת הכניסה (position), גריד היתרונות, מפת התמונה.</li>
+<li><code>css/about.css</code> - דף אודות: תמונה עגולה לצד טקסט, טבלת שעות הפתיחה, מפת גוגל.</li>
+<li><code>css/order.css</code> - דף ההזמנה: עיצוב הטופס וה-fieldset, ובדיקת התקינות הצבעונית.</li>
+<li><code>css/bouquets.css</code> ו-<code>css/plants.css</code> - דפי המוצרים: פסקית הפתיחה. כרטיסי המוצרים עצמם נשארו ב-style.css, כי שני הדפים חייבים להיראות אותו דבר.</li>
+<li><code>css/thanks.css</code> - דף סיום הפעולה: אנימציית ה-pop.</li>
+</ul></li>
+<li>בכל קובץ עיצוב יש גם media query משלו, ולכן כל דפי האתר רספונסיביים.</li>
+</ul>
+
+<h2>4. עמידה בדרישות</h2>
+<ul>
+<li>מבנה תיקיות: css, pages, assets/images, assets/media; בתיקייה הראשית רק index.html ו-favicon.ico.</li>
+<li>דפים: בית, אודות, הזמנה, סיום הזמנה, 2 דפי מוצרים (זרים, עציצים) באותו עיצוב.</li>
+<li>אנימציות: @keyframes sway (לוגו), fadeUp (main), pop (דף סיום) + transition.</li>
+<li>position: sticky (header), relative/absolute (תגית "חדש", טקסט על תמונת דף הבית).</li>
+<li>הטופס: text, email, tel+pattern, number, date, color, range, radio, checkbox, select+optgroup, textarea, required, כפתורי שליחה ואיפוס, שליחה לדף thanks.html.</li>
+<li>העיצוב לא משתמש ב-id, רק במחלקות, תגיות וסלקטורים מתקדמים (:nth-child, :hover, :invalid, :not, :placeholder-shown).</li>
+<li>media query בכל דף, גדלים באחוזים.</li>
+</ul>
+</body></html>
